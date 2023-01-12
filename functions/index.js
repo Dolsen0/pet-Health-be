@@ -1,14 +1,13 @@
 import functions from 'firebase-functions';
 import express from "express";
 import cors from "cors";
+import { getPet } from './src/getPet.js';
 
 const app = express();
 app.use(cors());
 app.use(express.json())
 
-app.get("/main", (req,res) => {
-    res.send("Pet Health")
-} )
+app.get("/main", getPet)
 
 
 export const api = functions.https.onRequest(app)
