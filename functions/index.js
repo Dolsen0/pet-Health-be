@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json())
 
-app.get("/main", getPet)
+app.get("/main/:id", getPet)
 
 
 export const api = functions.https.onRequest(app)
